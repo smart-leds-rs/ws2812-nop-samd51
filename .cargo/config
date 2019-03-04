@@ -1,0 +1,10 @@
+# samd51 is a Cortex-M4 and thus thumbv7em
+
+[build]
+target = "thumbv7em-none-eabihf"
+
+[target.thumbv6m-none-eabi]
+runner = 'arm-none-eabi-gdb'
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+]

@@ -1,0 +1,20 @@
+[package]
+name = "ws2812-nop-samd51"
+version = "0.1.0"
+authors = ["Paul Sajna <sajattack@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+smart-leds-trait = {git = "https://github.com/smart-leds-rs/smart-leds-trait"}
+cortex-m = "~0.5"
+
+[dependencies.embedded-hal]
+features = ["unproven"]
+version = "0.2.1"
+
+[dev-dependencies]
+atsamd-hal = "~0.4"
+metro_m4 = "~0.1" 
+cortex-m-rt = "~0.6" 
+panic-halt = "~0.2"
+smart-leds = {git = "https://github.com/smart-leds-rs/smart-leds"}
