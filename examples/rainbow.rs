@@ -14,8 +14,8 @@ use hal::{CorePeripherals, Peripherals};
 use cortex_m_rt::entry;
 
 use smart_leds::brightness;
-use smart_leds_trait::Color;
-use smart_leds_trait::SmartLedsWrite;
+use smart_leds::Color;
+use smart_leds::SmartLedsWrite;
 use ws2812::Ws2812;
 
 #[entry]
