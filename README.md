@@ -1,7 +1,7 @@
 # ws2812-nop-samd51
 Nop-delay bitbanger for 120MHz samd51 devices
 
-![metro m4](https://media.giphy.com/media/3Z1fycvzD37RDXViIf/giphy.gif)
+![metro m4](metro_m4.gif)
 
 ## License
 
