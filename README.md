@@ -1,7 +1,7 @@
 # ws2812-nop-samd51
 Nop-delay bitbanger for 120MHz samd51 devices
 
-![metro m4](metro_m4.gif)
+![metro m4](https://github.com/smart-leds-rs/ws2812-nop-samd51/blob/master/metro.gif?raw=true)
 
 ## License
 
