@@ -5,16 +5,16 @@ authors = ["Paul Sajna <sajattack@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-smart-leds-trait = "~0.1"
-cortex-m = "~0.5"
+smart-leds-trait = "~0.2"
+cortex-m = "~0.6"
 
 [dependencies.embedded-hal]
 features = ["unproven"]
 version = "0.2.1"
 
 [dev-dependencies]
-atsamd-hal = "~0.4"
-metro_m4 = "~0.1" 
-cortex-m-rt = "~0.6" 
+atsamd-hal = "~0.7"
+metro_m4 = "0.4.0"
+cortex-m-rt = "~0.6"
 panic-halt = "~0.2"
-smart-leds = "~0.1" 
+smart-leds = "~0.2"
