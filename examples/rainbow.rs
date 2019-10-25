@@ -2,20 +2,19 @@
 #![no_main]
 
 extern crate cortex_m;
-extern crate panic_halt;
 extern crate metro_m4 as hal;
+extern crate panic_halt;
 extern crate ws2812_nop_samd51 as ws2812;
 
-
+use cortex_m_rt::entry;
 use hal::clock::GenericClockController;
 use hal::delay::Delay;
+use hal::pac::{CorePeripherals, Peripherals};
 use hal::prelude::*;
-use hal::{CorePeripherals, Peripherals};
-use cortex_m_rt::entry;
 
 use smart_leds::brightness;
-use smart_leds::Color;
 use smart_leds::SmartLedsWrite;
+use smart_leds::RGB8;
 use ws2812::Ws2812;
 
 #[entry]
@@ -35,7 +34,7 @@ fn main() -> ! {
     let mut neopixel = Ws2812::new(neopixel_pin);
 
     const NUM_LEDS: usize = 1;
-    let mut data = [Color::default(); NUM_LEDS];
+    let mut data = [RGB8::default(); NUM_LEDS];
 
     loop {
         for j in 0..(256 * 5) {
@@ -52,7 +51,7 @@ fn main() -> ! {
 
 /// Input a value 0 to 255 to get a color value
 /// The colours are a transition r - g - b - back to r.
-fn wheel(mut wheel_pos: u8) -> Color {
+fn wheel(mut wheel_pos: u8) -> RGB8 {
     wheel_pos = 255 - wheel_pos;
     if wheel_pos < 85 {
         return (255 - wheel_pos * 3, 0, wheel_pos * 3).into();
