@@ -10,18 +10,18 @@ pub struct Ws2812<P: OutputPin> {
 
 impl<P: OutputPin> Ws2812<P> {
     pub fn new(pin: P) -> Ws2812<P> {
-        Ws2812 { pin: pin }
+        Ws2812 { pin }
     }
     fn write_byte(&mut self, data: u8) {
         let mut bitmask: u8 = 0x80;
         while bitmask != 0 {
-            self.pin.set_high().unwrap_or(());
+            let _ = self.pin.set_high();
             delay(2);
             if data & bitmask != 0 {
                 delay(3);
-                self.pin.set_low().unwrap_or(());
+                let _ = self.pin.set_low();
             } else {
-                self.pin.set_low().unwrap_or(());
+                let _ = self.pin.set_low();
                 delay(2);
             }
             bitmask >>= 1;
